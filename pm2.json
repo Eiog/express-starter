@@ -12,7 +12,7 @@
       "ref": "origin/main",
       "repo": "git@github.com:Eiog/express-starter.git",
       "path": "/root/www/Express-Starter",
-      "post-deploy": "pnpm i && pnpm run build && PORT=6000 pm2 start"
+      "post-deploy": "pnpm i && pnpm run build && PORT=6000 pm2 start pm2.json"
     }
   }
 }
