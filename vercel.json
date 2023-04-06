@@ -3,7 +3,6 @@
   "devCommand": "pnpm run dev",
   "buildCommand": "pnpm run build",
   "framework": null,
-  "outputDirectory": "dist",
   "public": true,
   "cleanUrls": true,
   "headers": [
