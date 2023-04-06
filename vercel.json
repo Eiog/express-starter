@@ -1,0 +1,19 @@
+{
+  "installCommand":"pnpm install",
+  "devCommand": "pnpm run dev",
+  "buildCommand": "pnpm run build",
+  "framework":null,
+  "outputDirectory":"dist",
+  "public":true,
+  "cleanUrls":true,
+  "functions":{},
+  "headers":{},
+  "ignoreCommand":"",
+  "redirects":[
+    {"source":"/(.*)","destination":"/dist/app.js"}
+  ],
+  "regions":"",
+  "rewrites":{},
+  "trailingSlash":false,
+  "crons":{}
+}
