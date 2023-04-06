@@ -26,7 +26,7 @@
     }
   ],
   "ignoreCommand": "",
-  "regions": ["HKG1"],
+  "regions": ["hkg1"],
   "rewrites": [
     {
       "source": "/(.*)",
