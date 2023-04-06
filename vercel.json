@@ -1,19 +1,40 @@
 {
-  "installCommand":"pnpm install",
+  "installCommand": "pnpm install",
   "devCommand": "pnpm run dev",
   "buildCommand": "pnpm run build",
-  "framework":null,
-  "outputDirectory":"dist",
-  "public":true,
-  "cleanUrls":true,
-  "functions":{},
-  "headers":{},
-  "ignoreCommand":"",
-  "redirects":[
-    {"source":"/(.*)","destination":"/dist/app.js"}
+  "framework": null,
+  "outputDirectory": "dist",
+  "public": true,
+  "cleanUrls": true,
+  "functions": {},
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "content-type"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "DELETE,PUT,POST,GET,OPTIONS"
+        }
+      ]
+    }
   ],
-  "regions":"",
-  "rewrites":{},
-  "trailingSlash":false,
-  "crons":{}
+  "ignoreCommand": "",
+  "redirects": [],
+  "regions": "HKG1",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/dist/app.js"
+    }
+  ],
+  "trailingSlash": false,
+  "crons": {}
 }
