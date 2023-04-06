@@ -33,6 +33,5 @@
       "destination": "/dist/app.js"
     }
   ],
-  "trailingSlash": false,
-  "crons": {}
+  "trailingSlash": false
 }
