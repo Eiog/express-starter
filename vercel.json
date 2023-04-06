@@ -29,7 +29,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/dist/app.js"
+      "destination": "/app.js"
     }
   ],
   "trailingSlash": false
