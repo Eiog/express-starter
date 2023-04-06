@@ -25,11 +25,24 @@
     }
   ],
   "ignoreCommand": "",
-  "regions": ["hkg1"],
+  "regions": [
+    "hkg1"
+  ],
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "dist/**"
+        ]
+      }
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/app.js"
+      "destination": "dist/index.js"
     }
   ],
   "trailingSlash": false

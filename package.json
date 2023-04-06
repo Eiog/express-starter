@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "update-deps": "taze -w && pnpm i",
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
+    "add-build":"git add dist",
     "type": "tsc --noEmit",
     "start": "node dist/app.js",
     "pm2": "PORT=6000 pm2 start pm2.json"
@@ -29,5 +30,9 @@
     "taze": "^0.9.1",
     "tsx": "^3.12.6",
     "typescript": "^5.0.3"
-  }
+  },
+  "pre-commit": [
+    "build",
+    "add-build"
+]
 }
