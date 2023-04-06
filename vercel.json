@@ -1,33 +1,4 @@
 {
-  "installCommand": "pnpm install",
-  "devCommand": "pnpm run dev",
-  "buildCommand": "pnpm run build",
-  "framework": null,
-  "public": true,
-  "cleanUrls": true,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "content-type"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "DELETE,PUT,POST,GET,OPTIONS"
-        }
-      ]
-    }
-  ],
-  "ignoreCommand": "",
-  "regions": [
-    "hkg1"
-  ],
   "builds": [
     {
       "src": "dist/index.js",
@@ -44,6 +15,5 @@
       "source": "/(.*)",
       "destination": "dist/index.js"
     }
-  ],
-  "trailingSlash": false
+  ]
 }
