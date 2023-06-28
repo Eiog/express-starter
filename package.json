@@ -1,33 +1,52 @@
 {
   "name": "express-starter",
-  "version": "1.0.0",
-  "description": "",
-  "author": "",
-  "license": "ISC",
-  "keywords": [],
   "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "author": "Eiog",
+  "license": "MIT",
+  "homepage": "https://github.com/Eiog/express-starter",
   "main": "src/app.js",
   "scripts": {
     "dev": "tsx watch src/app.ts",
+    "build": "rimraf dist && tsc",
+    "start": "node dist/app.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "update-deps": "taze -w && pnpm i",
-    "build": "rimraf dist && tsc",
-    "type": "tsc --noEmit",
-    "start": "node dist/app.js",
-    "pm2": "PORT=6000 pm2 start pm2.json"
+    "update:deps": "taze -w && pnpm i",
+    "type:check": "tsc --noEmit",
+    "cz": "czg",
+    "commit": "git pull && git add -A && pnpm cz && git push",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "npx simple-git-hooks"
   },
   "dependencies": {
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.4",
+    "@eiog/eslint-config-ts": "^0.0.2",
+    "@eiog/ts-config": "^0.0.3",
     "@types/express": "^4.17.17",
-    "@types/node": "^18.15.11",
+    "@types/node": "^20.3.2",
     "chalk": "^5.2.0",
-    "eslint": "^8.37.0",
-    "taze": "^0.9.1",
-    "tsx": "^3.12.6",
-    "typescript": "^5.0.3"
+    "commitlint": "^17.6.6",
+    "cz-git": "^1.6.1",
+    "czg": "^1.6.1",
+    "eslint": "^8.43.0",
+    "lint-staged": "^13.2.3",
+    "simple-git-hooks": "^2.8.1",
+    "taze": "^0.10.2",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.5",
+    "vitest": "^0.32.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm type:check"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "pnpm lint:fix"
+    ]
   }
 }
